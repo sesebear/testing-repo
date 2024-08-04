@@ -6,7 +6,7 @@ library(stringi)
 
 # Function to generate random text
 generate_random_text <- function(length) {
-  letters <- c(LETTERS, letters, 0:9, stri_punctuation())
+  letters <- c(LETTERS, letters, 0:9, strsplit("!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~", NULL)[[1]])
   return(paste0(sample(letters, length, replace = TRUE), collapse = ""))
 }
 
